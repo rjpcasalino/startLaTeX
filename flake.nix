@@ -14,7 +14,7 @@
     in rec {
       packages = {
         document = pkgs.stdenvNoCC.mkDerivation rec {
-          name = "latex-demo-document";
+          name = "latex-document";
           src = self;
           buildInputs = [ pkgs.coreutils pkgs.latex2html tex ];
           phases = ["unpackPhase" "buildPhase" "installPhase"];
