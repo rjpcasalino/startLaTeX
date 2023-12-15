@@ -38,6 +38,6 @@
             };
           };
           packages.default = packages.document;
-          devShell = with pkgs; mkShell { packages = [packages.document.buildInputs]; shellHook = ''echo -n Hello LaTeX'';};
+          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''echo -n Hello LaTeX''; };
         });
 }
