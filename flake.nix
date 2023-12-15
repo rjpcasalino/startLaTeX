@@ -24,6 +24,7 @@
                 export PATH="${pkgs.lib.makeBinPath buildInputs}";
                 mkdir -p .cache/texmf-var
                 env TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var \
+                  SOURCE_DATE_EPOCH=$(date +%s) \
                   OSFONTDIR=${pkgs.commit-mono}/share/fonts \
                   latexmk -interaction=nonstopmode -pdf -lualatex \
                   document.tex; \
