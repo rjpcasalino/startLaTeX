@@ -10,7 +10,7 @@
         let
           pkgs = nixpkgs.legacyPackages.${system};
           tex = pkgs.texlive.combine {
-            inherit (pkgs.texlive) scheme-minimal latex-bin latexmk;
+            inherit (pkgs.texlive) scheme-full latex-bin latexmk;
           };
         in
         rec {
@@ -18,7 +18,7 @@
             document = pkgs.stdenvNoCC.mkDerivation rec {
               name = "latex-document";
               src = self;
-              buildInputs = [ pkgs.coreutils pkgs.latex2html tex ];
+              buildInputs = [ pkgs.coreutils tex ];
               phases = [ "unpackPhase" "buildPhase" "installPhase" ];
               buildPhase = ''
                 export PATH="${pkgs.lib.makeBinPath buildInputs}";
@@ -27,12 +27,12 @@
                   SOURCE_DATE_EPOCH=$(date +%s) \
                   OSFONTDIR=${pkgs.commit-mono}/share/fonts \
                   latexmk -interaction=nonstopmode -pdf -lualatex \
-                  document.tex; \
-                  latex2html -noinfo document.tex
+                  document.tex resume.tex;
               '';
               installPhase = ''
                 mkdir -p $out
                 cp document.pdf $out/
+                cp resume.pdf $out/
                 cp -r document $out/
               '';
             };
