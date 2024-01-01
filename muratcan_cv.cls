@@ -50,7 +50,8 @@
 % can makebox also be used?
 \newcommand\headerview{
 \begin{minipage}{0.25\linewidth}
-    \profpic{0.22}{linux_rocks.png}
+    %\profpic{0.22}{linux_rocks.png}
+    \profpic{0.22}{rjpc.png}
 \end{minipage}% 
 \hfill
 \begin{minipage}{0.45\linewidth}
