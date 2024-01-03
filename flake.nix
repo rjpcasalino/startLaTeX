@@ -27,12 +27,12 @@
                   SOURCE_DATE_EPOCH=$(date +%s) \
                   OSFONTDIR=${pkgs.commit-mono}/share/fonts \
                   latexmk -interaction=nonstopmode -pdf -lualatex \
-                  document.tex; \
-                  latex2html -noinfo document.tex
+                  document.tex ps_seattleU.tex; \
+                  latex2html -noinfo document.tex ps_seattleU.tex
               '';
               installPhase = ''
                 mkdir -p $out
-                cp document.pdf $out/
+                cp document.pdf ps_seattleU.pdf $out/
                 cp -r document $out/
               '';
             };
