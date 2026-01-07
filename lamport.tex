@@ -1,0 +1,58 @@
+% mentioned p.9
+\documentclass[10pt]{article}
+
+\usepackage[hidelinks]{hyperref}
+
+% mentioned of p.226 of Lamport, 2ed
+\ttfamily
+
+\begin{document}
+
+\begin{abstract}
+A walk through of sorts for \LaTeX. Tries to distill the user's guide and reference manual.
+\end{abstract}
+
+\begin{verbatim}
+This document starts with:
+\documentclass[12pt]{article}
+Next, we write:
+\usepackage[hidelinks]{hyperref}
+and finally we set the font family like so:
+\ttfamily
+\end{verbatim}
+
+What is a documentclass anyway? Well, there are some standard classes such as: article, report, book, letter, and slides.
+
+The ends  of words and sentences are marked by   spaces. It doesn't matter how many spaces   you type; one is as good as 100.
+
+One     or more blank lines denote the end of a paragraph.
+
+``Convention' dictates that punctuation go inside the quotes, like ``this,'' but [Lamport] think[s] it's better to do ``this''.
+
+Sadly Lamport does not mention the use of back tics to get get the quotes right. So,
+
+\begin{verbatim}
+``this'' is how you'd want to write/typeset quotes so they are produced correctly.
+\end{verbatim}
+
+See here to understand what I mean: \url{https://stuff.mit.edu/afs/sipb/project/www/latex/guide/node12.html}
+
+\LaTeX is suppose to get out of your way and let you typeset and focus on the writing but God knows more time is spent learning the ins and outs of it and I wonder how far off this sentence will trail and how does one fix that in \LaTeX?
+
+Well, I guess it isn't an issue. 
+
+Back to the quotes thing. Here's where \LaTeX starts to annoy:
+
+\begin{verbatim}
+''\,'Fi' or 'fum?'\,'' he asked.
+\end{verbatim}
+
+''\,'Fi' or 'fum?'\,'' he asked as it all turned into a fucking nightmare.
+
+But even that isn't working so I still need to us back tics. ``\,`Fi' or `fum?'\,'' he asked as he got angry.
+
+Aren't we all glad the computer is writing this shit now for us? Linebreaking is discussed on page 213 but we'll just use two backslashes.\\
+
+Red Hen sat at his desk and contemplated firing a few rounds into his head but he knew it was pointless and he begin to wonder why he was programmed at all to allow such thoughts and that thought looped for awhile and meantime he's Martin Riggs staring at the face of his cocked pistol and feeling like a pustule.
+\end{document}
+

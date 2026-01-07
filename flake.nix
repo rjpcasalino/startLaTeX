@@ -9,6 +9,7 @@
       (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+          # re: latexmk see: https://latex.us/support/latexmk/INSTALL
           tex = pkgs.texlive.combine {
             inherit (pkgs.texlive) scheme-full latex-bin latexmk;
           };
@@ -27,16 +28,17 @@
                   SOURCE_DATE_EPOCH=$(date +%s) \
                   OSFONTDIR=${pkgs.commit-mono}/share/fonts \
                   latexmk -interaction=nonstopmode -pdf -lualatex \
-                  ABForm.tex resume.tex;
+                  ABForm.tex resume.tex lamport.tex;
               '';
               installPhase = ''
                 mkdir -p $out
                 cp resume.pdf $out/
-                cp ABForm.pdf $out
+                cp ABForm.pdf $out/
+                cp lamport.pdf $out
               '';
             };
           };
           packages.default = packages.document;
-          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''echo -n Hello LaTeX''; };
+          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''printf "\t%s\n\t%s\n", "Hello LaTeX", "run latexmk -interaction=nonstopmode -pdf -lualatex <your_tex_doc.tex>"''; };
         });
 }
