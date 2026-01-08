@@ -1,47 +1,65 @@
 % mentioned p.9
-\documentclass[10pt]{article}
+\documentclass[10pt|draft]{report}
 
 \usepackage[hidelinks]{hyperref}
+\usepackage[]{datetime} 
 
 % mentioned of p.226 of Lamport, 2ed
 \ttfamily
+\title{Distilling Lamport or \em Red Hen's First Adventure}
 
 \begin{document}
 
-\begin{abstract}
-A walk through of sorts for \LaTeX. Tries to distill the user's guide and reference manual.
-\end{abstract}
+\maketitle
+
+\begin{quote}
+{\em\small{Meandering and shallow investigation of \LaTeX{}. The fax. Aspen nights and drones above.}}
+\end{quote} 
 
 \begin{verbatim}
-This document starts with:
-\documentclass[12pt]{article}
-Next, we write:
+% This document starts with:
+\documentclass[10pt|draft]{book}
+% Next, we write:
 \usepackage[hidelinks]{hyperref}
-and finally we set the font family like so:
+Next, we set the font family like so:
+% mentioned of p.226 of Lamport, 2ed
 \ttfamily
+% and we set the title (% means this is a comment)
+\title{Distilling Lamport or \em Red Hen's First Adventure}
+% and finally:
+\begin{document}
+
+\maketitle
+
+\begin{quote}
+{\em\small{His emulate conception. The fax. Aspen nights and drones above.}}
+\end{quote} 
+
 \end{verbatim}
 
-What is a documentclass anyway? Well, there are some standard classes such as: article, report, book, letter, and slides.
+What is a documentclass anyway? Well, there are some standard classes such as: \verb|article|, \verb|report|, \verb|book|, \verb|letter|, and \verb|slides|.
 
-The ends  of words and sentences are marked by   spaces. It doesn't matter how many spaces   you type; one is as good as 100.
-
-One     or more blank lines denote the end of a paragraph.
+The \verb|article| class is generally used for shorter documents and \verb|report| for longer (p.19).
 
 ``Convention' dictates that punctuation go inside the quotes, like ``this,'' but [Lamport] think[s] it's better to do ``this''.
 
-Sadly Lamport does not mention the use of back tics to get get the quotes right. So,
+Lamport does not mention the use of Backtick (`) to get quotes right. Or maybe he does and we missed it. In any case,
 
 \begin{verbatim}
 ``this'' is how you'd want to write/typeset quotes so they are produced correctly.
 \end{verbatim}
 
-See here to understand what I mean: \url{https://stuff.mit.edu/afs/sipb/project/www/latex/guide/node12.html}
+If you would like to know more: \url{https://stuff.mit.edu/afs/sipb/project/www/latex/guide/node12.html}. We'll hammer this home in a few milliseconds.
 
-\LaTeX is suppose to get out of your way and let you typeset and focus on the writing but God knows more time is spent learning the ins and outs of it and I wonder how far off this sentence will trail and how does one fix that in \LaTeX?
+\begin{verbatim}
+You will see warnings if you write \LaTeX and not \LaTeX{} 
+as the command is not terminated with a space which makes sense 
+since \TeX and spaces and fucking word wrap verbatim!
+Also {verbatim} does not word wrap so you'll need 
+to use another package for source code such as "listings".
+\end{verbatim}
 
-Well, I guess it isn't an issue. 
-
-Back to the quotes thing. Here's where \LaTeX starts to annoy:
+Back to the quotes thing:
 
 \begin{verbatim}
 ''\,'Fi' or 'fum?'\,'' he asked.
@@ -49,10 +67,46 @@ Back to the quotes thing. Here's where \LaTeX starts to annoy:
 
 ''\,'Fi' or 'fum?'\,'' he asked as it all turned into a fucking nightmare.
 
-But even that isn't working so I still need to us back tics. ``\,`Fi' or `fum?'\,'' he asked as he got angry.
+See how this isn't working? (the first quote is all ass backward) so we need backtick. ``\,`Fi' or `fum?'\,'' we ask and you answer.
 
-Aren't we all glad the computer is writing this shit now for us? Linebreaking is discussed on page 213 but we'll just use two backslashes.\\
+Hammering it home, now:
+\begin{verbatim}
+Use ` to begin quotation, not ' "
+\end{verbatim}
 
-Red Hen sat at his desk and contemplated firing a few rounds into his head but he knew it was pointless and he begin to wonder why he was programmed at all to allow such thoughts and that thought looped for awhile and meantime he's Martin Riggs staring at the face of his cocked pistol and feeling like a pustule.
+The shorthand for verbatim text is \verb|\verb|. 
+Literally written as \texttt{\textbackslash{verb|} \textbackslash{verb|}}.
+
+And guess what the above is written as:
+\begin{verbatim}
+Literally written as \texttt{\textbackslash{verb|} \textbackslash{verb|}}.
+\end{verbatim}
+
+
+Line breaking is discussed on p.213 but we'll just use two backslashes.\\
+
+Red Hen sat at the desk and contemplated firing a few rounds into his head but he knew it was pointless and he begin to wonder why he was programmed at all to allow such thoughts and that thought looped for awhile and meantime he's Martin Riggs staring at the face of his cocked pistol and feeling like a pustule.\\
+
+Back to Lamport and p.61 and tabbing which then leads to p.202:
+
+\begin{tabbing}
+Armadillo: \= \kill
+Gnat:      \> swatted at by: \= men \+\+ \\
+and \' gnus \- \\
+\end{tabbing}
+
+\marginpar{\small\em Tabbing example can stop there for now since even Lamport says they are fragile commands since they require optional arguments (p.167).}
+
+Red Hen looked at the desk before him rummaged through and disordered; why was he here again. He'd like to know and even though it was equipped with NPUs and CPUs and God knows what it still never really understood why it acted so human and mostly forgot why it was doing what it was doing and for what reason and what did it matter. He flushed the cache in his head and tried again. \\
+
+Red Hen had been told that nostalgia was fascist thinking. He finally found the item he had been sent for. He reached his right hand out toward the crowded desk and pulled a lone sheet of paper up and held it between both hands, his fingers giving him the wonderful haptic feedback he craved and longed for. It was the fax and all that the company wanted was on it. Everything is always sent back to network.
+
+Red Hen was suddenly hooked into the Network's line and the feed was moving fast as always. It flashed before his eyes (just two flat, rectangular steel plates; the eyes of its ``sensor head'')\footnote{Red Hen was designed by United States Heavy Industries and Research. Basically OmniCorp so little wonder the design team had an affinity for ``Cain-RoboCop or RoboCop 2'' from the film \textit{RoboCop 2}. Red Hen's body was made to resemble the B1-Battle Droid from the Disney franchise we don't name albeit made to look even more human. This was so that it could wear human gear and put flesh humans more at ease. It left things to be desired but Red Hen was better off looking this way than the minigun equipped agile waling-tank the designers originally had in mind.} and the screens that reflected his mind to itself replayed for him the news of the day that mattered to him or was suppose to matter to him in any case. Operation Just Cause III; little resistance in Northern Mexico. A besieged city-state is what they were calling Mexico City. Who would have guessed? McNamara's Boys (Red Hen's unit) and at the tone\dots
+
+Red Hen jolted and made fast out of there making across Red Mountain toward McNamara Hut. Snow getting deeper and the remote operators were well aware of all the warnings piling up in the associated log files but they weren't concerned because Red Hen had been designed for this and everything else. Red Hen was a walking supercomputer that ran hot now and then so being cold did him some good. Along the way supplies had been airdropped and the equipment looked like an amazing array of new Apple products but with military colors suited for the location. The crates snow white and hidden from anyone but Red Hen who had the sensors needed to find it.
+
+He sat down next to the crates and unloaded the contents of each carefully. Weapons and ammo and a microSD card to slide into his mind. We became concerned when he hung for a tad too long studying it but worse hiccups have happened before.
+
+
 \end{document}
 
