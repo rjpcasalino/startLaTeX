@@ -11,7 +11,7 @@
           pkgs = nixpkgs.legacyPackages.${system};
           # re: latexmk see: https://latex.us/support/latexmk/INSTALL
           tex = pkgs.texlive.combine {
-            inherit (pkgs.texlive) scheme-full latex-bin latexmk;
+            inherit (pkgs.texlive) scheme-full latex-bin latexmk lwarp;
           };
         in
         rec {
@@ -19,7 +19,7 @@
             document = pkgs.stdenvNoCC.mkDerivation rec {
               name = "latex-document";
               src = self;
-              buildInputs = [ pkgs.coreutils tex ];
+              buildInputs = [ pkgs.coreutils tex pkgs.poppler_utils ];
               phases = [ "unpackPhase" "buildPhase" "installPhase" ];
               buildPhase = ''
                 export PATH="${pkgs.lib.makeBinPath buildInputs}";
