@@ -39,6 +39,6 @@
             };
           };
           packages.default = packages.document;
-          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''SOURCE_DATE_EPOCH=$(date +%s); printf "\t%s\n\t%s\n", "Hello LaTeX", "run latexmk -interaction=nonstopmode -pdf -lualatex <your_tex_doc.tex>"''; };
+          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''SOURCE_DATE_EPOCH=$(date +%s); printf "\t%s\n\t%s\n", "Hello LaTeX", "run latexmk -interaction=nonstopmode -pdf -pvc -lualatex <your_tex_doc.tex>"''; };
         });
 }
