@@ -19,7 +19,7 @@
             document = pkgs.stdenvNoCC.mkDerivation rec {
               name = "latex-document";
               src = self;
-              buildInputs = [ pkgs.coreutils pkgs.adobe-reader tex pkgs.poppler_utils ];
+              buildInputs = [ pkgs.coreutils pkgs.poppler-utils tex ];
               phases = [ "unpackPhase" "buildPhase" "installPhase" ];
               buildPhase = ''
                 export PATH="${pkgs.lib.makeBinPath buildInputs}";
