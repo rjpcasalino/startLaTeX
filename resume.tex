@@ -1,102 +1,167 @@
-\pdfvariable suppressoptionalinfo 512\relax
-\documentclass{muratcan_cv}
-\usepackage{fontspec}
-\setmonofont{CommitMono}
+\documentclass[10pt,letterpaper]{article}
 
-\setname{Ryan Joseph Patrick}{Casalino}
-\setaddress{Seattle, WA USA}
-\setmobile{917.282.7506}
-\setmail{ryan.casalino@gmail.com}
-\setposition{Programmer}
-\setlinkedinaccount{https://www.linkedin.com/in/ryan-casalino-b2ba55290/}
-\setgithubaccount{https://www.github.com/rjpcasalino}
-%\setthemecolor{YellowOrange}
-\setthemecolor{NavyBlue}
+% --------------------
+% Page layout
+% --------------------
+\usepackage[
+  left=0.75in,
+  right=0.75in,
+  top=0.7in,
+  bottom=0.7in
+]{geometry}
 
-\begin{document}
-%Create header
-\headerview
-\vspace{1ex}
-%Sections
-%
-% Summary
-\addblocktext{Summary}{%
-I am a largely self-taught programmer with proven ability. I am comfortable with a variety of programming languages and am familiar with modern software paradigms.
-I enjoy working with UNIX-like operating systems NixOS and OpenBSD. I strive to write clean code and understand systems. If given an ambiguous problem I can solve it. But I'm also a team player and I'm not afraid to ask for help. I am a life long learner with a growth mindset and avid reader. I have a passion for technology and a desire to help people.
+\usepackage{parskip}     % modern paragraph spacing
+\usepackage{enumitem}    % control lists
+\usepackage{titlesec}    % section styling
+\usepackage{hyperref}    % links
+\usepackage{setspace}    % subtle spacing control
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}     % high-quality default font
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black
 }
-%
+
+% --------------------
+% Section styling
+% --------------------
+\titleformat{\section}
+  {\scshape\large}
+  {}
+  {0pt}
+  {}
+  [\vspace{-0.4em}\rule{\linewidth}{0.4pt}]
+
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+
+% --------------------
+% Custom commands
+% --------------------
+\newcommand{\entry}[3]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  #3
+  \vspace{0.6em}
+}
+
+\newcommand{\role}[2]{%
+  \textit{#1} \hfill \textit{#2}\\
+}
+
+% --------------------
+% Document
+% --------------------
+\begin{document}
+
+% --------------------
+% Header
+% --------------------
+\begin{center}
+  {\Large\scshape Ryan Joseph Patrick Casalino}\\[0.4em]
+  Seattle, WA USA \quad • \quad
+  \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad • \quad
+  917.282.7506\\
+  \href{https://www.linkedin.com/in/ryan-casalino-b2ba55290/}{LinkedIn}
+  \quad • \quad
+  \href{https://www.github.com/rjpcasalino}{GitHub}
+\end{center}
+
+\vspace{0.8em}
+
+% --------------------
+% Summary
+% --------------------
+\section{Summary}
+
+Self-taught software programmer with proven professional experience across startups, mid-sized companies, and government-adjacent work. Comfortable working across the stack and across languages, with a strong preference for clarity, correctness, and maintainable systems.
+
+Experienced in UNIX-like environments including NixOS and OpenBSD. Thrives in ambiguous problem spaces, values collaboration, and maintains a strong growth mindset through continuous learning and reading. Motivated by a desire to build reliable systems that help people.
+
+% --------------------
+% Experience
+% --------------------
 \section{Experience}
-    %
-    \datedexperience{Liaison Technologies}{2015 - 2017 / Atlanta, GA}
-    \mbox { \scshape \hspace{1.2em} \tiny{\texttt{Liaison Technologies allowed organizations
-     to meet their toughest data challenges while building a robust data-centric foundation.}}}\\
-    \explanation{Software Programmer}
-    \indent \indent \begin{minipage}{0.96\linewidth} \footnotesize
-     At Liaison I contributed to Node.js RESTful APIs built with Hapi.js for a variety of internal and customer-facing services. Working on a cross-functional team that spanned oceans we produced MVPs in an agile environment. I was also responsible for maintenance of various front end and back end systems.
-    \end{minipage} \\[0.1cm]\\
-    %
-    \datedexperience{Merchant-e Solutions}{2017 / Atlanta, GA}
-    \mbox { \scshape \hspace{1.2em} \tiny{\texttt{Merchant-e makes payment processing simple.}}}\\
-    \explanation{Software Programmer}
-    \indent \indent \begin{minipage}{0.96\linewidth} \footnotesize
-     While with Merchant-e I delivered a Node.js database connection CLI for an Oracle database to replace an aging and arcane Java-based solution. I supported Apache and nginx server upgrades and maintenance for a variety of front end applications ranging from the POS UI to the company's marketing website. I also mentored junior developers and helped them with their projects. Finally, I was able to introduce the company to the benefits of using Docker for development and production environments.
-    \end{minipage} \\[0.1cm]\\
-    %
-    \datedexperience{Various Startups}{2017 - 2020 / Seattle, WA}
-    \mbox { \scshape \hspace{1.2em} \tiny{GawkBox, React Mobile, Contract roles elsewhere}}\\
-    \explanation{Software Programmer}
-    \indent \indent \begin{minipage}{0.96\linewidth} \footnotesize
-            Working at a startup named "GawkBox"—whose mission was to help monetize streamer content, I owned the rewrite of their authentication API replacing a hastily written Node.js implementation with one written in Go. This rewrite resulted in reduced code complexity and increased performance. I also created the schema for and deployed a MySQL instance to work in conjunction with said API. I introduced Vue.js for v2 of the front end replacing a poorly supported Sails.js implementation. I enhanced the login/authentication experience for users of the platform while adding new features. I next worked for "React Mobile" where I oversaw and maintained a Ruby based queue system for the company's "Panic Button" solution ensuring both up-time and availability. I developed features for an Electron application for macOS and Windows that allowed users to remotely manage wireless beacons. One such feature was the ability to remotely update the firmware of said beacons. I also oversaw aspects of the company's AWS infrastructure.
-    \end{minipage} \\[0.1cm]\\
-    %
-    \datedexperience{Sinch}{2020 - 2022 / Bothell, WA}
-    \mbox { \scshape \hspace{1.2em} \tiny{\texttt{Sinch powers meaningful conversations at scale across
-    messaging, voice, and email to help businesses deliver personalized experiences.}}}\\
-    \explanation{Software Programmer}
-    \indent \indent \begin{minipage}{0.96\linewidth} \footnotesize
-     I contributed to the creation of personalized SMS and RCS messages with a Ruby proxy service driving Adobe After Effects. I maintained a content management system written in an obscure Ruby framework and documented arcane processes within said system.
-    \end{minipage} \\[0.1cm]\\
-    %
-    \datedexperience{Ad Hoc}{2022 - Now / Seattle, WA}
-    \mbox { \scshape \hspace{1.2em} \tiny{Ad Hoc empowers organizations to deliver digital
-    services that promote the general welfare.}}\\
-    \explanation{Software Programmer}
-    \indent \indent \begin{minipage}{0.96\linewidth} \footnotesize
-     I help maintain and ship new features for the Medicare.gov Plan Finder application. This work includes owning portions of both plan and drug data ETL processes which involves myriad scripts written in three different languages. I also provide support for the authentication experience for Medicare and Medicaid beneficiaries. I assist in maintaining Plan Finder's IaC using Terraform and write documentation for Plan Finder's internal documentation website. I help support the company's internal recruiting tool ("People App") fulfilling feature development and maintenance requests. I've created CLI tools for internal operations to make the jobs of both Software Engineers and Product Managers easier. These CLI tools allow for connection to government VPN and allow stakeholders to query databases securely, query the status of our systems in general, and perform various cloud operations. I also preform code reviews and evaluate the "homework" submissions of job candidates while assisting my peers in debugging issues with the online evaluation environment.
-    \end{minipage} \\[0.1cm]\\
-%
+
+\entry{Ad Hoc}{2022 -- Present}{Seattle, WA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Maintain and deliver new features for the Medicare.gov Plan Finder application.
+  \item Own portions of plan and drug data ETL pipelines across multiple languages.
+  \item Support authentication workflows for Medicare and Medicaid beneficiaries.
+  \item Maintain Infrastructure-as-Code using Terraform.
+  \item Develop internal CLI tools for secure VPN access, system queries, and cloud operations.
+  \item Contribute to internal documentation and support engineering hiring through code reviews and candidate evaluations.
+\end{itemize}
+
+\entry{Sinch}{2020 -- 2022}{Bothell, WA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Built personalized SMS and RCS messaging workflows using a Ruby proxy service driving Adobe After Effects.
+  \item Maintained and documented a legacy CMS built on an uncommon Ruby framework.
+  \item Improved internal knowledge transfer by documenting undocumented production processes.
+\end{itemize}
+
+\entry{Various Startups}{2017 -- 2020}{Seattle, WA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Led a full authentication API rewrite in Go, replacing a brittle Node.js implementation and improving performance and maintainability.
+  \item Designed and deployed MySQL schemas to support new backend services.
+  \item Introduced Vue.js to replace a poorly supported Sails.js frontend.
+  \item Maintained Ruby-based queue systems supporting safety-critical applications.
+  \item Developed cross-platform Electron applications for managing wireless beacon devices.
+  \item Supported and maintained AWS infrastructure.
+\end{itemize}
+
+\entry{Merchant-e Solutions}{2017}{Atlanta, GA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Developed a Node.js CLI for Oracle database access, replacing an aging Java-based tool.
+  \item Supported Apache and nginx server upgrades across multiple frontend applications.
+  \item Mentored junior developers and introduced Docker-based development workflows.
+\end{itemize}
+
+\entry{Liaison Technologies}{2015 -- 2017}{Atlanta, GA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Built and maintained RESTful APIs using Node.js and Hapi.js.
+  \item Worked on distributed, cross-functional teams to deliver MVPs in agile environments.
+  \item Maintained both frontend and backend systems for internal and customer-facing services.
+\end{itemize}
+
+% --------------------
 % Skills
+% --------------------
 \section{Skills}
-    %
-    \newcommand{\skillone}{\createskill{Programming Languages}{ Go | Python | Ruby | JavaScript | Bash | Perl | Terraform | SQL }}
-    \newcommand{\skilltwo}{\createskill{Cloud}{ Amazon Web Services | Google Cloud Platform }}
-    \newcommand{\skillthree}{\createskill{Software Development}{ Agile Methodology | DevOps Lifecycles }}
-    \newcommand{\skillfour}{\createskill{Software Tools}{ git | gRPC | JSON | XML | Protobufs | Docker | *nix }}
-    %
-    \createskills{\skillone, \skilltwo, \skillthree, \skillfour}
-%
-%Education
-\section{Education} 
-    \datedexperience{School of the Art Institute of Chicago}{2006 - 2011}
-    \explanation{BFA with emphasis on writing}
-    \datedexperience{General Assembly (Atlanta) }{Spring 2015}
-    \explanation{code boot camp}
-%
+
+\textbf{Programming Languages:} Go, Python, Ruby, JavaScript, Bash, Perl, SQL, Terraform
+
+\textbf{Cloud Platforms:} Amazon Web Services, Google Cloud Platform
+
+\textbf{Development Practices:} Agile methodologies, DevOps lifecycles
+
+\textbf{Tools \& Technologies:} Git, Docker, gRPC, Protobufs, JSON, XML, UNIX-like systems
+
+% --------------------
+% Education
+% --------------------
+\section{Education}
+
+\entry{School of the Art Institute of Chicago}{2006 -- 2011}{BFA, emphasis on writing}
+
+\entry{General Assembly (Atlanta)}{Spring 2015}{Code Bootcamp}
+
+\entry{City University of Seattle}{2025 -- Present}{Master of Science in Computer Science}
+
+% --------------------
 % Extra
-\section{Extra}
-    \newcommand{\extraone}{%
-     NixOS and OpenBSD enthusiast and user.
-    }
-    \newcommand{\extratwo}{%
-     Avid blogger and manual page reader.
-    }
-    \newcommand{\extrathree}{%
-     Open Source contributor. IPv6 advocate. Raspberry Pi tinkerer.
-    }
-    \newcommand{\listofextras}{\extraone, \extratwo, \extrathree}
-    %
-    \createbullets{\listofextras}
-%
-%Footnote (removed for now)
-%\createfootnote
+% --------------------
+\section{Additional}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item NixOS and OpenBSD enthusiast.
+  \item Avid blogger and manual-page reader.
+  \item Open source contributor, IPv6 advocate, Raspberry Pi tinkerer.
+\end{itemize}
+
 \end{document}
+
