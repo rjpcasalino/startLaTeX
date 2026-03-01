@@ -28,13 +28,11 @@
                   SOURCE_DATE_EPOCH=$(date +%s) \
                   OSFONTDIR=${pkgs.commit-mono}/share/fonts \
                   latexmk -interaction=nonstopmode -pdf -lualatex \
-                  ABForm.tex resume.tex lamport.tex;
+                  resume.tex;
               '';
               installPhase = ''
                 mkdir -p $out
                 cp resume.pdf $out/
-                cp ABForm.pdf $out/
-                cp lamport.pdf $out
               '';
             };
           };
