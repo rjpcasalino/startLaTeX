@@ -1,0 +1,167 @@
+\documentclass[10pt,letterpaper]{article}
+
+% --------------------
+% Page layout
+% --------------------
+\usepackage[
+  left=0.75in,
+  right=0.75in,
+  top=0.7in,
+  bottom=0.7in
+]{geometry}
+
+\usepackage{parskip}     % modern paragraph spacing
+\usepackage{enumitem}    % control lists
+\usepackage{titlesec}    % section styling
+\usepackage{hyperref}    % links
+\usepackage{setspace}    % subtle spacing control
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}     % high-quality default font
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black
+}
+
+% --------------------
+% Section styling
+% --------------------
+\titleformat{\section}
+  {\scshape\large}
+  {}
+  {0pt}
+  {}
+  [\vspace{-0.4em}\rule{\linewidth}{0.4pt}]
+
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+
+% --------------------
+% Custom commands
+% --------------------
+\newcommand{\entry}[3]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  #3
+  \vspace{0.6em}
+}
+
+\newcommand{\role}[2]{%
+  \textit{#1} \hfill \textit{#2}\\
+}
+
+% --------------------
+% Document
+% --------------------
+\begin{document}
+
+% --------------------
+% Header
+% --------------------
+\begin{center}
+  {\Large\scshape Ryan Joseph Patrick Casalino}\\[0.4em]
+  Seattle, WA USA \quad • \quad
+  \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad • \quad
+  917.282.7506\\
+  \href{https://www.linkedin.com/in/ryan-casalino-b2ba55290/}{LinkedIn}
+  \quad • \quad
+  \href{https://www.github.com/rjpcasalino}{GitHub}
+\end{center}
+
+\vspace{0.8em}
+
+% --------------------
+% Summary
+% --------------------
+\section{Summary}
+
+Self-taught software programmer with proven professional experience across startups, mid-sized companies, and government-adjacent work. Comfortable working across the stack and across languages, with a strong preference for clarity, correctness, and maintainable systems.
+
+Experienced in UNIX-like environments including NixOS and OpenBSD. Thrives in ambiguous problem spaces, values collaboration, and maintains a strong growth mindset through continuous learning and reading. Motivated by a desire to build reliable systems that help people.
+
+% --------------------
+% Experience
+% --------------------
+\section{Experience}
+
+\entry{Ad Hoc}{2022 -- Present}{Seattle, WA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Maintain and deliver new features for the Medicare.gov Plan Finder application.
+  \item Own portions of plan and drug data ETL pipelines across multiple languages.
+  \item Support authentication workflows for Medicare and Medicaid beneficiaries.
+  \item Maintain Infrastructure-as-Code using Terraform.
+  \item Develop internal CLI tools for secure VPN access, system queries, and cloud operations.
+  \item Contribute to internal documentation and support engineering hiring through code reviews and candidate evaluations.
+\end{itemize}
+
+\entry{Sinch}{2020 -- 2022}{Bothell, WA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Built personalized SMS and RCS messaging workflows using a Ruby proxy service driving Adobe After Effects.
+  \item Maintained and documented a legacy CMS built on an uncommon Ruby framework.
+  \item Improved internal knowledge transfer by documenting undocumented production processes.
+\end{itemize}
+
+\entry{Various Startups}{2017 -- 2020}{Seattle, WA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Led a full authentication API rewrite in Go, replacing a brittle Node.js implementation and improving performance and maintainability.
+  \item Designed and deployed MySQL schemas to support new backend services.
+  \item Introduced Vue.js to replace a poorly supported Sails.js frontend.
+  \item Maintained Ruby-based queue systems supporting safety-critical applications.
+  \item Developed cross-platform Electron applications for managing wireless beacon devices.
+  \item Supported and maintained AWS infrastructure.
+\end{itemize}
+
+\entry{Merchant-e Solutions}{2017}{Atlanta, GA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Developed a Node.js CLI for Oracle database access, replacing an aging Java-based tool.
+  \item Supported Apache and nginx server upgrades across multiple frontend applications.
+  \item Mentored junior developers and introduced Docker-based development workflows.
+\end{itemize}
+
+\entry{Liaison Technologies}{2015 -- 2017}{Atlanta, GA}
+\role{Software Programmer}{}
+\begin{itemize}[leftmargin=1.2em]
+  \item Built and maintained RESTful APIs using Node.js and Hapi.js.
+  \item Worked on distributed, cross-functional teams to deliver MVPs in agile environments.
+  \item Maintained both frontend and backend systems for internal and customer-facing services.
+\end{itemize}
+
+% --------------------
+% Skills
+% --------------------
+\section{Skills}
+
+\textbf{Programming Languages:} Go, Python, Ruby, JavaScript, Bash, Perl, SQL, Terraform
+
+\textbf{Cloud Platforms:} Amazon Web Services, Google Cloud Platform
+
+\textbf{Development Practices:} Agile methodologies, DevOps lifecycles
+
+\textbf{Tools \& Technologies:} Git, Docker, gRPC, Protobufs, JSON, XML, UNIX-like systems
+
+% --------------------
+% Education
+% --------------------
+\section{Education}
+
+\entry{School of the Art Institute of Chicago}{2006 -- 2011}{BFA, emphasis on writing}
+
+\entry{General Assembly (Atlanta)}{Spring 2015}{Code Bootcamp}
+
+\entry{City University of Seattle}{2024 -- Present}{Master of Science in Computer Science}
+
+% --------------------
+% Extra
+% --------------------
+\section{Additional}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item NixOS and OpenBSD enthusiast.
+  \item Avid blogger and manual-page reader.
+  \item Open source contributor, IPv6 advocate, Raspberry Pi tinkerer.
+\end{itemize}
+
+\end{document}
+

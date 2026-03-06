@@ -9,8 +9,9 @@
       (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+          # re: latexmk see: https://latex.us/support/latexmk/INSTALL
           tex = pkgs.texlive.combine {
-            inherit (pkgs.texlive) scheme-minimal latex-bin latexmk;
+            inherit (pkgs.texlive) scheme-full latex-bin latexmk lwarp;
           };
         in
         rec {
@@ -18,7 +19,7 @@
             document = pkgs.stdenvNoCC.mkDerivation rec {
               name = "latex-document";
               src = self;
-              buildInputs = [ pkgs.coreutils pkgs.latex2html tex ];
+              buildInputs = [ pkgs.coreutils pkgs.poppler-utils tex ];
               phases = [ "unpackPhase" "buildPhase" "installPhase" ];
               buildPhase = ''
                 export PATH="${pkgs.lib.makeBinPath buildInputs}";
@@ -27,17 +28,15 @@
                   SOURCE_DATE_EPOCH=$(date +%s) \
                   OSFONTDIR=${pkgs.commit-mono}/share/fonts \
                   latexmk -interaction=nonstopmode -pdf -lualatex \
-                  document.tex ps_seattleU.tex; \
-                  latex2html -noinfo document.tex ps_seattleU.tex
+                  resume.tex;
               '';
               installPhase = ''
                 mkdir -p $out
-                cp document.pdf ps_seattleU.pdf $out/
-                cp -r document $out/
+                cp resume.pdf $out/
               '';
             };
           };
           packages.default = packages.document;
-          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''echo -n Hello LaTeX''; };
+          devShell = with pkgs; mkShell { packages = [ packages.document.buildInputs ]; shellHook = ''SOURCE_DATE_EPOCH=$(date +%s); printf "\t%s\n\t%s\n", "Hello LaTeX", "run latexmk -interaction=nonstopmode -pdf -pvc -lualatex <your_tex_doc.tex>"''; };
         });
 }

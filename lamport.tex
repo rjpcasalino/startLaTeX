@@ -1,0 +1,249 @@
+% mentioned p.9
+\documentclass[10pt|draft]{report}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[]{datetime} 
+\usepackage{lipsum} % for dummy text
+
+% mentioned of p.226 of Lamport, 2ed
+\ttfamily
+\title{Distilling Lamport}
+
+\begin{document}
+
+\begin{verbatim}
+% This document is for Vera Rex and starts with:
+\documentclass[10pt|draft]{report}
+% Next, we write:
+\usepackage[hidelinks]{hyperref}
+Next, we set the font family like so:
+% mentioned of p.226 of Lamport, 2ed
+\ttfamily
+% and we set the title (% means this is a comment)
+\title{Distilling Lamport}
+% and finally:
+\maketitle
+
+\begin{abstract}
+Meandering and shallow investigation of \LaTeX{}.
+\end{abstract}
+\end{verbatim}
+
+\maketitle
+
+\begin{abstract}
+Meandering and shallow investigation of \LaTeX{}.
+\end{abstract}
+
+\begin{quote}
+One of the hardest things about using \LaTeX{} is deciding how to pronounce it.
+\end{quote}
+
+I, for one, pronounce it like the gloves one finds in most hospitals.
+
+What is a \verb|documentclass| anyway? Well, there are some standard classes such as: \verb|article|, \verb|report|, \verb|book|, \verb|letter|, and \verb|slides|.
+
+The \verb|article| class is generally used for shorter documents and \verb|report| for longer (p.19).
+
+``Convention' dictates that punctuation go inside the quotes, like ``this,'' but [Lamport] think[s] it's better to do ``this''.
+
+Lamport does not mention the use of Backtick (`) to get quotes right. Or maybe he does and we missed it. In any case,
+
+\begin{verbatim}
+``this'' is how you'd want to write/typeset quotes so they are produced correctly.
+\end{verbatim}
+
+If you would like to know more: \url{https://stuff.mit.edu/afs/sipb/project/www/latex/guide/node12.html}. We'll hammer this home in a few milliseconds.
+
+Hammering it home, now:
+\begin{verbatim}
+Use ` to begin quotation, not ' "
+\end{verbatim}
+
+The shorthand for verbatim text is \verb|\verb|. 
+Literally written as \texttt{\textbackslash{verb|} \textbackslash{verb|}}.
+
+\begin{verbatim}
+Literally written as \texttt{\textbackslash{verb|} \textbackslash{verb|}}.
+\end{verbatim}
+
+p. 99 gets into Length and further on it's Spacing.
+
+Here's my quick overview---\\
+\section*{AI explains \LaTeX{} Length Units}
+
+\begin{itemize}
+
+  \item[\texttt{cm}]
+  \rule{3cm}{1pt}
+  About the width of a couple of fingers.
+  Great for print layouts where rulers still matter.
+
+  \item[\texttt{mm}]
+  \rule{10mm}{1pt}
+  For when centimeters feel too large.
+
+  \item[\texttt{in}]
+  \rule{1in}{1pt}
+  One inch.
+
+  \item[\texttt{pt}]
+  \rule{72pt}{1pt}
+  72 points = 1 inch.
+
+  \item[\texttt{pc}]
+  \rule{6pc}{1pt}
+  6 picas = 1 inch.
+
+  \item[\texttt{em}]
+  \rule{5em}{1pt}
+  As wide as the letter ‘M’ — roughly.
+
+  \item[\texttt{ex}]
+  \rule{10ex}{1pt}
+  Based on the height of the letter ‘x’.
+
+  \item[\texttt{bp}]
+  \rule{72bp}{1pt}
+  Almost like points.
+
+  \item[\texttt{dd}]
+  \rule{10dd}{1pt}
+  Metric-flavored typography.
+
+  \item[\texttt{sp}]
+  \rule{65536sp}{1pt}
+  1 pt = 65,536 sp.
+  You will never use this intentionally.
+
+\end{itemize}
+
+re: lengths section above---I think the most fun thing would be to master tabbing so you can finally treat the computer like the secret typewriter it is. And I wish, I truly do, that I wrote what's above but I just edited output of ChatGPT and I feel bad and lazy, Vera so I'll focus harder on tabbing for you and I'll try to make it only me and me alone and no computer just daddy.
+\section*{Leaving Space for Space}
+
+\hspace{1in}This is one inch away from the left side of the page. \\
+that is done via \verb|\hspace{1in}| \\
+Now, vertical space is easy too: \\
+\vspace{1in}Hey\dots\\
+\dots we are an inch down here now! \\
+which was done via \verb|\vspace{1in}|.
+
+
+\section*{Tabbing is Music to some Ears}
+
+\begin{tabbing}
+        \=              \kill
+        \> USA
+        \= \\
+        \>  \> PRC
+            \= \\
+            \> \> \> OK FOR YOU
+                \= \\
+            \> \> \> \> OK FOR ME\dots?
+                \= \\
+            \> \> \> \> \> OK OK OK---we got it now?
+                \= \\
+and back again? \\ \\
+\= \kill \= \kill
+\= 1 \= 2 \=3 \\
+\> a \> b \> c \\
+
+
+\= Take it \= and \\
+\> slow \> easy \= \\
+\> \> \> there is nothing you can not do \\
+\= \kill
+Back to the start but \= \\
+\> we tab again, my dear
+\= \kill
+I think I only get it when I am drinking? Which is a \\
+\> bad \\
+thing and \\
+\> sad
+thing \\
+\= \kill
+\> So there you have it, tabbing and verbatim soon, I effing swear!
+
+\= \= \= \= \= \=\\
+\> \> \> \> \> \> and that is the magic of tabbing.
+
+\end{tabbing}
+
+\begin{verbatim}
+
+\begin{tabbing}
+        \=              \kill
+        \> USA
+        \= \\
+        \>  \> PRC
+            \= \\
+            \> \> \> OK FOR YOU
+                \= \\
+            \> \> \> \> OK FOR ME\dots?
+                \= \\
+            \> \> \> \> \> OK OK OK---we got it now?
+                \= \\
+and back again? \\ \\
+\= \kill \= \kill
+\= 1 \= 2 \=3 \\
+\> a \> b \> c \\
+
+
+\= Take it \= and \\
+\> slow \> easy \= \\
+\> \> \> there is nothing you can not do
+\= \kill
+Back to the start but \= \\
+\> we tab again, my dear
+\= \kill
+I think I only get it when I am drinking? Which is a \\
+\> bad \\
+thing and \\
+\> sad
+thing \\
+\= \kill
+\> So there you have it, tabbing and verbatim soon, I effing swear!
+
+\= \= \= \= \= \=\\
+\> \> \> \> \> \> and that is the magic of tabbing.
+
+\end{tabbing}
+\end{verbatim}
+
+\begin{tabbing}
+\hspace*{1in}\=\hspace*{1in} \= \kill
+\> Lamport says to use tabbing if you really want \LaTeX{} to be a typewriter. \\ \> O, Does he? \\ \> \> Hell yeah, I say yay! \\ Who the\dots the \textit{eff} said \textit{that}? Who said \textit{it}? \\ \> You. \\ \>  \> Me? \\ YOU\@. That voice. It really is such a crystal voice. \\ \> Me. I see. \\
+Do you, really? \\
+\> Yes, I think so. \\ \> \> Me too. \\ Who is who here? \\ \> It's like ping---\\
+\> \> pong. \\
+I remember President Nixon! \\
+\> \> \dots \\
+\> We all do. \\
+I don't know where go with this now, Vera and I suppose I never will. I am sorry if its useless. \\
+I feel it probably will go unread. And that's a \\
+\> \> sad \\
+\=\hspace{1cm}\=\hspace{10mm}\=\hspace{1in}\\
+\> \> \> thing.\\
+
+
+You might ask how I knew certain things or why I spoke about such random things always coming at odd times and in odd places. What can I say? I am just a man. I was just a man.
+\kill\\
+\=\\
+I thought I was in love once as many boys my age do and\dots it's \verb|\dots| all the way across, I swear. \\ \> I swear to the Creator of the Sun and the Moon and all the Wanderers orbiting at the dead of night \\ \> at the dead of night o at the dead of night\dots
+
+\end{tabbing}
+\hrule
+\section*{You don't need nothing not even a drum\dots}
+\begin{verbatim}
+\section*{You don't need nothing not even a drum\dots}
+\end{verbatim}
+
+That's because the music is in your mind and all around your effing head, I swear so bring it on!
+
+Anyway, anytime, anyhow, anything\dots
+
+I really wish I didn't have to pee or waste time on that. I wish I could wear a mechanical diaper and it recycles my poo\dots and I thank you. \\
+\hspace{1in}my Vera Rex my Vera Rubin my Dark Matter my Light my Life\hspace{1in}\dots
+
+\end{document}
+
