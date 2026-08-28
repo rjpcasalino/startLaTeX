@@ -1,13 +1,13 @@
 \documentclass[10pt,letterpaper]{article}
 
 % --------------------
-% Page layout
+% Page layout & Packages
 % --------------------
 \usepackage[
-  left=0.75in,
-  right=0.75in,
-  top=0.7in,
-  bottom=0.7in
+  left=0.7in,
+  right=0.7in,
+  top=0.6in,
+  bottom=0.6in
 ]{geometry}
 
 \usepackage{parskip}     % modern paragraph spacing
@@ -15,37 +15,42 @@
 \usepackage{titlesec}    % section styling
 \usepackage{hyperref}    % links
 \usepackage{setspace}    % subtle spacing control
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}     % high-quality default font
+\usepackage{fontspec}    % font selection for LuaLaTeX
+\usepackage{xcolor}      % subtle visual accenting
+
+% Subtle, professional color palette
+\definecolor{accentcolor}{HTML}{2E4053} % Dark Slate Blue
+\definecolor{linkcolor}{HTML}{1B4F72}   % Muted Navy
 
 \hypersetup{
   colorlinks=true,
-  urlcolor=black
+  urlcolor=linkcolor,
+  linkcolor=linkcolor
 }
 
 % --------------------
 % Section styling
 % --------------------
 \titleformat{\section}
-  {\scshape\large}
+  {\color{accentcolor}\scshape\large\bfseries}
   {}
   {0pt}
   {}
-  [\vspace{-0.4em}\rule{\linewidth}{0.4pt}]
+  [\vspace{-0.4em}\color{accentcolor}\rule{\linewidth}{0.8pt}]
 
-\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+\titlespacing*{\section}{0pt}{1.0em}{0.4em}
 
 % --------------------
 % Custom commands
 % --------------------
 \newcommand{\entry}[3]{%
-  \textbf{#1} \hfill \textit{#2}\\
-  #3
-  \vspace{0.6em}
+  \noindent\textbf{#1} \hfill \textit{#2}\par
+  \noindent#3\par
+  \vspace{0.3em}
 }
 
 \newcommand{\role}[2]{%
-  \textit{#1} \hfill \textit{#2}\\
+  \noindent\textit{#1}\ifx&#2&\else \hfill \textit{#2}\fi\par
 }
 
 % --------------------
@@ -53,115 +58,106 @@
 % --------------------
 \begin{document}
 
+
+\vspace{0.4em}
+
 % --------------------
 % Header
 % --------------------
 \begin{center}
-  {\Large\scshape Ryan Joseph Patrick Casalino}\\[0.4em]
-  Seattle, WA USA \quad • \quad
-  \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad • \quad
+  {\Huge\scshape\color{accentcolor} Ryan Joseph Patrick Casalino}\\[0.5em]
+  Seattle, WA United States \quad \textbullet \quad
+  \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad \textbullet \quad
   917.282.7506\\
   \href{https://www.linkedin.com/in/ryan-casalino-b2ba55290/}{LinkedIn}
-  \quad • \quad
+  \quad \textbullet \quad
   \href{https://www.github.com/rjpcasalino}{GitHub}
 \end{center}
 
-\vspace{0.8em}
+\vspace{0.4em}
 
 % --------------------
 % Summary
 % --------------------
 \section{Summary}
 
-Self-taught software programmer with proven professional experience across startups, mid-sized companies, and government-adjacent work. Comfortable working across the stack and across languages, with a strong preference for clarity, correctness, and maintainable systems.
-
-Experienced in UNIX-like environments including NixOS and OpenBSD. Thrives in ambiguous problem spaces, values collaboration, and maintains a strong growth mindset through continuous learning and reading. Motivated by a desire to build reliable systems that help people.
+Senior Software \& Systems Engineer specializing in high-availability public infrastructure and containerized Go microservices. Proven track record of driving zero-downtime blue/green deployments, managing AWS infrastructure at scale, and architecting resilient edge systems. Comfortable working across the entire spectrum: system/scripting logic to client applications and user interfaces be they CLIs or TUIs or Websites.
+% --------------------
+% Technical Core / Highlight Matrix
+% --------------------
+\section{Technical Core}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
+  \item \textbf{Languages \& Runtime:} Go (gRPC, microservices), TypeScript, React, Python, Ruby, SQL, Bash. I work with a lot of Go. I really do.
+  \item \textbf{Cloud \& Edge Architecture:} AWS (ECS, Aurora PostgreSQL, S3), Kong API Gateway, Akamai CDN/WAF, Redis Caching.
+  \item \textbf{DevOps, Delivery \& Security:} CloudBees Jenkins, LaunchDarkly, Nix / NixOS, Terraform, Docker, SonarQube, JFrog Xray.
+  \item \textbf{Observability \& Quality Assurance:} New Relic, Splunk. 24/7 On-Call Support.
+\end{itemize}
 
 % --------------------
 % Experience
 % --------------------
 \section{Experience}
 
-\entry{Ad Hoc}{2022 -- Present}{Seattle, WA}
-\role{Software Programmer}{}
-\begin{itemize}[leftmargin=1.2em]
-  \item Maintain and deliver new features for the Medicare.gov Plan Finder application.
-  \item Own portions of plan and drug data ETL pipelines across multiple languages.
-  \item Support authentication workflows for Medicare and Medicaid beneficiaries.
-  \item Maintain Infrastructure-as-Code using Terraform.
-  \item Develop internal CLI tools for secure VPN access, system queries, and cloud operations.
-  \item Contribute to internal documentation and support engineering hiring through code reviews and candidate evaluations.
+\entry{Ad Hoc LLC}{2022 -- Present}{Seattle, WA}
+\role{Senior Software Engineer}{}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
+  \item Architecting these high-throughput, containerized Go microservices on AWS behind Kong and Akamai.
+  \item Engineering mobile-first React and TypeScript interfaces. They're strictly WCAG 2.2 Level AA and Section 508 compliant, because I hate it when people are excluded. I really do.
+  \item Gating CloudBees Jenkins pipelines with automated accessibility tools so regressions can't sneak in alongside the unit and end-to-end suites. No exceptions.
+  \item Managing Aurora PostgreSQL data stores and Redis caches just to keep the API latency down for all that high-concurrency public traffic.
+  \item Using LaunchDarkly for feature flags and blue/green deployments so there's zero downtime. 
+  \item Carrying this 24/7 on-call rotation. Getting woken up by New Relic and Splunk alerts at ungodly hours.
+  \item Triaging SonarQube, and JFrog Xray vulnerabilities directly in the active sprint.
 \end{itemize}
 
 \entry{Sinch}{2020 -- 2022}{Bothell, WA}
-\role{Software Programmer}{}
-\begin{itemize}[leftmargin=1.2em]
-  \item Built personalized SMS and RCS messaging workflows using a Ruby proxy service driving Adobe After Effects.
-  \item Maintained and documented a legacy CMS built on an uncommon Ruby framework.
-  \item Improved internal knowledge transfer by documenting undocumented production processes.
+\role{Software Engineer}{}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
+  \item Built dynamic SMS and RCS messaging workflows powered by these high-concurrency Ruby proxy layers.
+  \item Refactored their legacy Content Management Systems. The old architecture was completely phony, so I documented it properly and cut down the onboarding time to save the new devs some grief.
 \end{itemize}
 
 \entry{Various Startups}{2017 -- 2020}{Seattle, WA}
-\role{Software Programmer}{}
-\begin{itemize}[leftmargin=1.2em]
-  \item Led a full authentication API rewrite in Go, replacing a brittle Node.js implementation and improving performance and maintainability.
-  \item Designed and deployed MySQL schemas to support new backend services.
-  \item Introduced Vue.js to replace a poorly supported Sails.js frontend.
-  \item Maintained Ruby-based queue systems supporting safety-critical applications.
-  \item Developed cross-platform Electron applications for managing wireless beacon devices.
-  \item Supported and maintained AWS infrastructure.
+\role{Software Engineer}{}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
+  \item Did a full architectural migration of legacy Node.js authentication services to idiomatic Go. Reduced the request latency and server resources, which actually wasn't too crummy.
+  \item Designed normalized MySQL database schemas and asynchronous job queues to keep the safety-critical backend operations from blowing up.
+  \item Authored cross-platform desktop utilities in Electron and Vue.js for configuring wireless hardware beacons.
 \end{itemize}
 
 \entry{Merchant-e Solutions}{2017}{Atlanta, GA}
-\role{Software Programmer}{}
-\begin{itemize}[leftmargin=1.2em]
-  \item Developed a Node.js CLI for Oracle database access, replacing an aging Java-based tool.
-  \item Supported Apache and nginx server upgrades across multiple frontend applications.
-  \item Mentored junior developers and introduced Docker-based development workflows.
+\role{Software Engineer}{}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
+  \item Engineered custom Node.js CLI utilities for direct database querying.
+  \item Standardized the containerized local development stacks using Docker and upgraded the enterprise Nginx and Apache web server configurations.
 \end{itemize}
 
 \entry{Liaison Technologies}{2015 -- 2017}{Atlanta, GA}
-\role{Software Programmer}{}
-\begin{itemize}[leftmargin=1.2em]
-  \item Built and maintained RESTful APIs using Node.js and Hapi.js.
-  \item Worked on distributed, cross-functional teams to deliver MVPs in agile environments.
-  \item Maintained both frontend and backend systems for internal and customer-facing services.
+\role{Software Engineer}{}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
+  \item Built RESTful API endpoints using Node.js and Hapi.js. Had to collaborate with distributed Agile engineering teams, which is fine if you're into that sort of thing.
 \end{itemize}
-
-% --------------------
-% Skills
-% --------------------
-\section{Skills}
-
-\textbf{Programming Languages:} Go, Python, Ruby, JavaScript, Bash, Perl, SQL, Terraform
-
-\textbf{Cloud Platforms:} Amazon Web Services, Google Cloud Platform
-
-\textbf{Development Practices:} Agile methodologies, DevOps lifecycles
-
-\textbf{Tools \& Technologies:} Git, Docker, gRPC, Protobufs, JSON, XML, UNIX-like systems
 
 % --------------------
 % Education
 % --------------------
 \section{Education}
 
-\entry{School of the Art Institute of Chicago}{2006 -- 2011}{BFA, emphasis on writing}
+\entry{City University of Seattle}{2024 -- Present}{Seattle, WA}
+\role{Master of Science in Computer Science}{}
 
-\entry{General Assembly (Atlanta)}{Spring 2015}{Code Bootcamp}
-
-\entry{City University of Seattle}{2024 -- Present}{Master of Science in Computer Science}
+\vspace{0.4em}
+\entry{School of the Art Institute of Chicago}{2006 -- 2011}{Chicago, IL}
+\role{Bachelor of Fine Arts}{}
 
 % --------------------
-% Extra
+% Additional
 % --------------------
-\section{Additional}
+\section{Additional \& Systems Interests}
 
-\begin{itemize}[leftmargin=1.2em]
-  \item NixOS and OpenBSD enthusiast.
-  \item Avid blogger and manual-page reader.
-  \item Open source contributor, IPv6 advocate, Raspberry Pi tinkerer.
+\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
+  \item NixOS, OpenBSD, and custom Linux kernel/workstation configuration practitioner. I contribute to open source tools, if you want to know the truth. 
+  \item Embedded devices enthusiast. I actually spend time cross-compiling my own custom NixOS SD card images for single-board micro-controllers, which probably sounds crazy, but I swear it isn't.
 \end{itemize}
 
 \end{document}
-
