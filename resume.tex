@@ -18,6 +18,36 @@
 \usepackage{fontspec}    % font selection for LuaLaTeX
 \usepackage{xcolor}      % subtle visual accenting
 
+% --------------------
+% Typography & Font Switcher
+% --------------------
+% Quick-switch presets: Uncomment ONE block below to change document typography.
+
+% PRESET 1: Clean Contemporary (Default)
+% \setmainfont{Inter}
+% \setsansfont{Montserrat}
+
+
+% PRESET 2: Vercel / Developer Aesthetic (Modern & Crisp)
+% \setmainfont{Geist}
+% \setsansfont{Geist}
+% \setmonofont{Geist Mono}
+
+% PRESET 3: Tech Corporate / Minimalist (Plus Jakarta Sans + Inter)
+% \setmainfont{Inter}
+% \setsansfont{Plus Jakarta Sans}
+% \setmonofont{JetBrains Mono}
+
+% PRESET 4: Technical Precision (IBM Plex Suite)
+% \setmainfont{IBM Plex Sans}
+% \setsansfont{IBM Plex Sans}
+% \setmonofont{IBM Plex Mono}
+
+% PRESET 5: Modern Geometric (Roboto & Lato)
+  \setmainfont{Roboto}
+  \setsansfont{Lato}
+  \setmonofont{Fira Code}
+
 % Subtle, professional color palette
 \definecolor{accentcolor}{HTML}{2E4053} % Dark Slate Blue
 \definecolor{linkcolor}{HTML}{1B4F72}   % Muted Navy
@@ -32,7 +62,7 @@
 % Section styling
 % --------------------
 \titleformat{\section}
-  {\color{accentcolor}\scshape\large\bfseries}
+  {\color{accentcolor}\sffamily\large\bfseries}
   {}
   {0pt}
   {}
@@ -58,14 +88,13 @@
 % --------------------
 \begin{document}
 
-
 \vspace{0.4em}
 
 % --------------------
 % Header
 % --------------------
 \begin{center}
-  {\Huge\scshape\color{accentcolor} Ryan Joseph Patrick Casalino}\\[0.5em]
+  {\Huge\sffamily\bfseries\color{accentcolor} Ryan Joseph Patrick Casalino}\\[0.5em]
   Seattle, WA United States \quad \textbullet \quad
   \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad \textbullet \quad
   917.282.7506\\
@@ -81,7 +110,9 @@
 % --------------------
 \section{Summary}
 
-Senior Software \& Systems Engineer specializing in high-availability public infrastructure and containerized Go microservices. Proven track record of driving zero-downtime blue/green deployments, managing AWS infrastructure at scale, and architecting resilient edge systems. Comfortable working across the entire spectrum: system/scripting logic to client applications and user interfaces be they CLIs or TUIs or Websites.
+Senior Software \& Systems Engineer specializing in high-availability public infrastructure and containerized Go microservices. Proven track record of driving zero-downtime blue/green deployments, managing AWS infrastructure at scale, and architecting resilient edge systems. \\
+\\ Comfortable working across the entire spectrum: system/scripting logic to client applications and user interfaces be they CLIs or TUIs or Websites.
+
 % --------------------
 % Technical Core / Highlight Matrix
 % --------------------
@@ -113,7 +144,7 @@ Senior Software \& Systems Engineer specializing in high-availability public inf
 \entry{Sinch}{2020 -- 2022}{Bothell, WA}
 \role{Software Engineer}{}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-  \item Built dynamic SMS and RCS messaging workflows powered by these high-concurrency Ruby proxy layers.
+  \item Built dynamic SMS and RCS messaging workflows powered by high-concurrency Ruby proxy layers.
   \item Refactored their legacy Content Management Systems. The old architecture was completely phony, so I documented it properly and cut down the onboarding time to save the new devs some grief.
 \end{itemize}
 
