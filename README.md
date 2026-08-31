@@ -1,6 +1,6 @@
-# StartLaTeX
+# startLaTeX
 
-StartLaTeX is a minimal LaTeX starter repository that includes a few example
+startLaTeX is a minimal LaTeX starter repository that includes a few example
 documents to learn from or customize.
 
 ## Contents
