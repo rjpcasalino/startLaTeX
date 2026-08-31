@@ -11,8 +11,8 @@ documents to learn from or customize.
 1. Enter the development shell:
    `nix develop`
 2. Build any document with latexmk (example: resume.tex):
-   latexmk -interaction=nonstopmode -pdf -lualatex resume.tex
-   (Use -pvc for continuous preview.)
+   `latexmk -interaction=nonstopmode -pdf -lualatex resume.tex`
+   (Add `-pvc` for continuous preview.)
 3. Or build the default document via the flake:
    `nix build`
    The output is available at ./result/resume.pdf

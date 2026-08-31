@@ -18,7 +18,7 @@
           
           # Size Optimization: Removed `scheme-full`. `texliveSmall` already provides a base environment.
           tex = pkgs.texliveSmall.withPackages (ps: with ps; [
-            latex-bin latexmk lwarp enumitem titlesec
+            latex-bin latexmk lwarp enumitem titlesec fontawesome5
           ]);
 
           # Speed Optimization: Replaced the manual copy loop with `symlinkJoin`
