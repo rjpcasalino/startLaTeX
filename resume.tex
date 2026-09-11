@@ -10,52 +10,44 @@
   bottom=0.6in
 ]{geometry}
 
-\usepackage{parskip}     % modern paragraph spacing
-\usepackage{enumitem}    % control lists
-\usepackage{titlesec}    % section styling
-\usepackage{hyperref}    % links
-\usepackage{setspace}    % subtle spacing control
-\usepackage{fontspec}    % font selection for LuaLaTeX
-\usepackage{xcolor}      % subtle visual accenting
+\usepackage{parskip}     
+\usepackage{enumitem}    
+\usepackage{titlesec}    
+\usepackage{hyperref}    
+\usepackage{setspace}    
+\usepackage{fontspec}    
+\usepackage{xcolor}      
 
 % --------------------
 % Typography & Font Switcher
 % --------------------
-% Quick-switch presets: Uncomment ONE block below to change document typography.
+\setmainfont{Inter}
+\setsansfont{Plus Jakarta Sans}
+\setmonofont{JetBrains Mono}
 
-% PRESET 1: Clean Contemporary (Default)
-% \setmainfont{Inter}
-% \setsansfont{Montserrat}
-
-
-% PRESET 2: Vercel / Developer Aesthetic (Modern & Crisp)
-% \setmainfont{Geist}
-% \setsansfont{Geist}
-% \setmonofont{Geist Mono}
-
-% PRESET 3: Tech Corporate / Minimalist (Plus Jakarta Sans + Inter)
-% \setmainfont{Inter}
-% \setsansfont{Plus Jakarta Sans}
-% \setmonofont{JetBrains Mono}
-
-% PRESET 4: Technical Precision (IBM Plex Suite)
-% \setmainfont{IBM Plex Sans}
-% \setsansfont{IBM Plex Sans}
-% \setmonofont{IBM Plex Mono}
-
-% PRESET 5: Modern Geometric (Roboto & Lato)
-  \setmainfont{Roboto}
-  \setsansfont{Lato}
-  \setmonofont{Fira Code}
-
-% Subtle, professional color palette
-\definecolor{accentcolor}{HTML}{2E4053} % Dark Slate Blue
-\definecolor{linkcolor}{HTML}{1B4F72}   % Muted Navy
+% --------------------
+% Color Palette: Grayscale
+% --------------------
+\definecolor{accentcolor}{HTML}{222222}  % Dark Charcoal
+\definecolor{linkcolor}{HTML}{333333}    % Dark Slate Link
+\definecolor{rulecolor}{HTML}{555555}    % Medium Grey Accent
 
 \hypersetup{
   colorlinks=true,
   urlcolor=linkcolor,
   linkcolor=linkcolor
+}
+
+% --------------------
+% Standardized Entry Commands (Margins Tightened)
+% --------------------
+\newcommand{\entry}[3]{%
+  \noindent\textbf{\color{accentcolor}#1} \hfill \textit{#3} \quad \quad \textit{#2}\par
+}
+
+\newcommand{\role}[2]{%
+  \noindent\textit{#1}\par
+  \vspace{0.2em}
 }
 
 % --------------------
@@ -66,22 +58,22 @@
   {}
   {0pt}
   {}
-  [\vspace{-0.4em}\color{accentcolor}\rule{\linewidth}{0.8pt}]
+  [\vspace{-0.4em}\color{rulecolor}\rule{\linewidth}{0.8pt}]
 
 \titlespacing*{\section}{0pt}{1.0em}{0.4em}
 
-% --------------------
-% Custom commands
-% --------------------
-\newcommand{\entry}[3]{%
-  \noindent\textbf{#1} \hfill \textit{#2}\par
-  \noindent#3\par
-  \vspace{0.3em}
-}
 
-\newcommand{\role}[2]{%
-  \noindent\textit{#1}\ifx&#2&\else \hfill \textit{#2}\fi\par
-}
+% --------------------
+% Section styling
+% --------------------
+\titleformat{\section}
+  {\color{accentcolor}\sffamily\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{-0.4em}\color{rulecolor}\rule{\linewidth}{0.8pt}]
+
+\titlespacing*{\section}{0pt}{1.0em}{0.4em}
 
 % --------------------
 % Document
@@ -94,79 +86,65 @@
 % Header
 % --------------------
 \begin{center}
-  {\Huge\sffamily\bfseries\color{accentcolor} Ryan Joseph Patrick Casalino}\\[0.5em]
-  Seattle, WA United States \quad \textbullet \quad
-  \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad \textbullet \quad
-  917.282.7506\\
-  \href{https://www.linkedin.com/in/ryan-casalino-b2ba55290/}{LinkedIn}
-  \quad \textbullet \quad
-  \href{https://www.github.com/rjpcasalino}{GitHub}
+  {\Huge\sffamily\bfseries\color{accentcolor} Ryan Joseph Patrick Casalino}\\[0.6em]
+  \small
+  Seattle, WA USA\quad | \quad
+  \href{mailto:ryan.casalino@gmail.com}{ryan.casalino@gmail.com} \quad | \quad
+  917-282-7506\\[0.3em]
+  \href{https://www.linkedin.com/in/ryan-casalino-b2ba55290/}{LinkedIn \textdagger linkedin.com/in/ryan-casalino-b2ba55290/}
+  \quad | \quad
+        \href{https://www.github.com/rjpcasalino}{GitHub} \quad | \quad U.S. Person \href{https://www.irs.gov/individuals/international-taxpayers/classification-of-taxpayers-for-us-tax-purposes}{\textdagger}
 \end{center}
 
-\vspace{0.4em}
+\vspace{0.6em}
 
 % --------------------
 % Summary
 % --------------------
 \section{Summary}
-
-Senior Software \& Systems Engineer specializing in high-availability public infrastructure and containerized Go microservices. Proven track record of driving zero-downtime blue/green deployments, managing AWS infrastructure at scale, and architecting resilient edge systems. \\
-\\ Comfortable working across the entire spectrum: system/scripting logic to client applications and user interfaces be they CLIs or TUIs or Websites.
-
-% --------------------
-% Technical Core / Highlight Matrix
-% --------------------
-\section{Technical Core}
-\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
-  \item \textbf{Languages \& Runtime:} Go (gRPC, microservices), TypeScript, React, Python, Ruby, SQL, Bash. I work with a lot of Go. I really do.
-  \item \textbf{Cloud \& Edge Architecture:} AWS (ECS, Aurora PostgreSQL, S3), Kong API Gateway, Akamai CDN/WAF, Redis Caching.
-  \item \textbf{DevOps, Delivery \& Security:} CloudBees Jenkins, LaunchDarkly, Nix / NixOS, Terraform, Docker, SonarQube, JFrog Xray.
-  \item \textbf{Observability \& Quality Assurance:} New Relic, Splunk. 24/7 On-Call Support.
-\end{itemize}
+Senior Software \& Backend Engineer with 8 years real world software engineering experience currently specializing in high-availability public infrastructure and containerized microservices. Proven track record of driving zero-downtime blue/green deployments, managing AWS infrastructure at scale, and architecting resilient systems and APIs. Private-sector experience ranges from startups focused on monetizing Twitch streams to mid-size companies focused on end-to-end payments and "big data``.
 
 % --------------------
 % Experience
 % --------------------
 \section{Experience}
 
-\entry{Ad Hoc LLC}{2022 -- Present}{Seattle, WA}
-\role{Senior Software Engineer}{}
+\entry{Ad Hoc, LLC}{}{}
+\entry{Senior Software Engineer --- Medicare Plan Compare API}{Feb 2022 -- Present}{Remote}
+\role{Backend / Platform (Go, gRPC, AWS, Terraform)}{}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-  \item Architecting these high-throughput, containerized Go microservices on AWS behind Kong and Akamai.
-  \item Engineering mobile-first React and TypeScript interfaces. They're strictly WCAG 2.2 Level AA and Section 508 compliant, because I hate it when people are excluded. I really do.
-  \item Gating CloudBees Jenkins pipelines with automated accessibility tools so regressions can't sneak in alongside the unit and end-to-end suites. No exceptions.
-  \item Managing Aurora PostgreSQL data stores and Redis caches just to keep the API latency down for all that high-concurrency public traffic.
-  \item Using LaunchDarkly for feature flags and blue/green deployments so there's zero downtime. 
-  \item Carrying this 24/7 on-call rotation. Getting woken up by New Relic and Splunk alerts at ungodly hours.
-  \item Triaging SonarQube, and JFrog Xray vulnerabilities directly in the active sprint.
+        \item Shipped \textbf{295 merged pull requests} across 4.5 years of sustained delivery, authoring \textbf{\textasciitilde49K lines} of production \textbf{Go} powering CMS's public-facing Medicare.gov Plan Compare experience before wide adoaption of GenAI tools such as Claude Code and Codex. I learned the system by working on it directly and now use these tools to aid my team and I in maintaining the system so as to avoid a great amount of typing.
+  \item Owned end-to-end backend service architecture across \textbf{microservices}, building robust gRPC/protobuf API layers backed by PostgreSQL and orchestrated on AWS infrastructure.
+  \item Provisioned and managed cloud infrastructure using \textbf{Terraform and Terragrunt}.
+  \item Managed CI/CD jobs using \textbf{Groovy and Jenkins}.
+  \item Using \textbf{Python and Bash}, streamlined internal maintenance and ETL operations. I oversaw the development to replace a CLI written in Bash to one written in Python with Click (a Python CLI library) thus reducing maintenance burden.
+  \item Advocated for and integrated \textbf{Nix} dev-shells and build environments to ensure reproducible local development setups and eliminate ``works on my machine'' inconsistencies across teams.
 \end{itemize}
 
 \entry{Sinch}{2020 -- 2022}{Bothell, WA}
-\role{Software Engineer}{}
+\role{Software Engineer (Ruby, AWS, Automation)}{}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-  \item Built dynamic SMS and RCS messaging workflows powered by high-concurrency Ruby proxy layers.
-  \item Refactored their legacy Content Management Systems. The old architecture was completely phony, so I documented it properly and cut down the onboarding time to save the new devs some grief.
+  \item Engineered an automated, headless video rendering pipeline using Ruby and Bash to dynamically orchestrate AWS EC2 Windows instances executing Adobe After Effects CLI tasks.
+  \item Maintained and refactored complex backend architectures built on Ruby frameworks (including Trailblazer), decoupling monolith dependencies to increase reliability and developer velocity.
+  \item Scaled personalized media generation workflows to render custom video/graphic assets on-demand for high-volume SMS and MMS customer engagement campaigns.
+  \item Documented legacy Content Management Systems and championed developer tooling standards to streamline onboarding and reduce operational friction.
 \end{itemize}
 
-\entry{Various Startups}{2017 -- 2020}{Seattle, WA}
-\role{Software Engineer}{}
+\entry{Selected Projects \& Independent Engineering}{2017 -- 2020}{Seattle, WA}
+\role{Systems \& Software Engineer}{}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-  \item Did a full architectural migration of legacy Node.js authentication services to idiomatic Go. Reduced the request latency and server resources, which actually wasn't too crummy.
-  \item Designed normalized MySQL database schemas and asynchronous job queues to keep the safety-critical backend operations from blowing up.
-  \item Authored cross-platform desktop utilities in Electron and Vue.js for configuring wireless hardware beacons.
+  \item \textbf{Declarative Infrastructure Provisioning:} Authored OpenTofu and Terraform configurations alongside layered Docker images to deploy web applications and ACM SSL certificates across AWS ECS infrastructure.
+  \item \textbf{Embedded Systems \& NixOS Enthusiast:} Built custom Nix flakes and cross-compiled NixOS images for single-board computers (Broadcom/Allwinner SoCs), configuring Wayland compositors (Sway) for hardware-accelerated kiosk environments.
 \end{itemize}
 
-\entry{Merchant-e Solutions}{2017}{Atlanta, GA}
-\role{Software Engineer}{}
-\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-  \item Engineered custom Node.js CLI utilities for direct database querying.
-  \item Standardized the containerized local development stacks using Docker and upgraded the enterprise Nginx and Apache web server configurations.
-\end{itemize}
-
-\entry{Liaison Technologies}{2015 -- 2017}{Atlanta, GA}
-\role{Software Engineer}{}
-\begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-  \item Built RESTful API endpoints using Node.js and Hapi.js. Had to collaborate with distributed Agile engineering teams, which is fine if you're into that sort of thing.
+% --------------------
+% Technical Skills
+% --------------------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
+        \item[] \textbf{Languages:} Go, Python, Ruby, TypeScript, SQL, Bash / Shell, JavaScript
+        \item[] \textbf{Infrastructure \& DevOps:} AWS (ECS, S3, Aurora), Google Cloud, Terraform, Terragrunt, Docker
+        \item[] \textbf{Architecture \& Services:} gRPC, PostgreSQL, REST APIs
 \end{itemize}
 
 % --------------------
@@ -174,21 +152,11 @@ Senior Software \& Systems Engineer specializing in high-availability public inf
 % --------------------
 \section{Education}
 
-\entry{City University of Seattle}{2024 -- Present}{Seattle, WA}
+\entry{City University of Seattle}{Expected 2027}{}
 \role{Master of Science in Computer Science}{}
 
 \vspace{0.4em}
-\entry{School of the Art Institute of Chicago}{2006 -- 2011}{Chicago, IL}
+\entry{School of the Art Institute of Chicago}{}{}
 \role{Bachelor of Fine Arts}{}
-
-% --------------------
-% Additional
-% --------------------
-\section{Additional \& Systems Interests}
-
-\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
-  \item NixOS, OpenBSD, and custom Linux kernel/workstation configuration practitioner. I contribute to open source tools, if you want to know the truth. 
-  \item Embedded devices enthusiast. I actually spend time cross-compiling my own custom NixOS SD card images for single-board micro-controllers, which probably sounds crazy, but I swear it isn't.
-\end{itemize}
 
 \end{document}
