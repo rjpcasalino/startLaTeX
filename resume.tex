@@ -102,7 +102,7 @@
 % Summary
 % --------------------
 \section{Summary}
-Self-taught Senior Software Engineer with 10 years real world software engineering experience currently specializing in high-availability public infrastructure, containerized microservices and backend systems. Proven track record of driving zero-downtime blue/green deployments, managing AWS infrastructure at scale, and architecting resilient systems and APIs. Private-sector experience ranges from startups focused on monetizing Twitch streams to mid-size companies focused on end-to-end payments and "big data``.
+Self-taught Senior Software Engineer with 10 years real world software engineering experience currently specializing in high-availability public infrastructure, containerized microservices and backend systems. Proven track record of managing AWS infrastructure at scale, and expanding and maintaining resilient systems and gRPC APIs. Private-sector experience ranges from startups focused on monetizing Twitch streams to mid-size companies focused on end-to-end payments and "big data``.
 
 % --------------------
 % Experience
@@ -118,21 +118,21 @@ Self-taught Senior Software Engineer with 10 years real world software engineeri
   \item Provisioned and managed cloud infrastructure using \textbf{Terraform and Terragrunt}.
   \item Managed CI/CD jobs using \textbf{Groovy and Jenkins}.
   \item Using \textbf{Python and Bash}, streamlined internal maintenance and ETL operations. I oversaw the development to replace a CLI written in Bash to one written in Python with Click (a Python CLI library) thus reducing maintenance burden.
+  \item Day-to-day software tools I used: \texttt{docker}, \texttt{psql}, \texttt{make}.
 \end{itemize}
 
 \entry{Sinch}{2020 -- 2022}{Bothell, WA}
 \role{Software Engineer (Ruby, AWS, Automation)}{}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
   \item Engineered an automated, headless video rendering pipeline using Ruby and Bash to dynamically orchestrate AWS EC2 Windows instances executing Adobe After Effects CLI tasks.
-  \item Maintained and refactored complex backend architectures built on Ruby frameworks (including Trailblazer), decoupling monolith dependencies to increase reliability and developer velocity.
-  \item Documented legacy Content Management Systems and championed developer tooling standards to streamline onboarding and reduce operational friction.
+  \item Maintained and refactored complex backend architectures built on Ruby frameworks (including Trailblazer...sadly not Rails...not sure why the Dev who made it picked that...).
+  \item Documented legacy Content Management Systems and championed developer tooling standards (i.e., advocated for \texttt{nix}) to streamline onboarding and reduce operational friction (i.e., get the stack up and running quickly).
 \end{itemize}
 
 \entry{GawkBox}{2017 -- 2019}{Seattle, WA}
 \role{Software Programmer}{}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
     \item Developed high-performance Go APIs and backend microservices handling CRUD operations and data processing for live-streaming creator monetization platforms.
-    \item Implemented containerized build and deployment workflows using Docker and Travis CI to streamline integration cycles and maintain release reliability.
 \end{itemize}
 
 \entry{Liaison Technologies}{2015 -- 2016}{Alpharetta, GA}
@@ -169,7 +169,7 @@ Self-taught Senior Software Engineer with 10 years real world software engineeri
 
     \item \textbf{bss (Boring Static Site Generator)}: A minimalist static site generator written in Perl that pairs Template Toolkit with \texttt{rsync} for rapid page generation and asset synchronization.
     \begin{itemize}[leftmargin=1.2em, itemsep=0.25em]
-            \item[] Employs a pre-scanned template lookup cache (\texttt{\%template\_map}), optimizing template resolution from $O(n \times m)$ complexity down to $O(n + m).
+            \item[] An LLM (I cannot remember what model at this point) used a hash map or "pre-scanned template lookup cache'' (\texttt{\%template\_map}), optimizing buildtime from $O(n \times m)$ complexity down to $O(n + m).
             \item[] Features a built-in HTTP server coupled with a detached background file watcher (\texttt{setsid()}, \texttt{fork()}, and file modification time scanning) that triggers incremental builds upon changes.
             \item[] Automatically compiles and writes a JSON metadata file (\texttt{\_\_bss\_meta.json}) tracking build IDs, timestamps, build duration in milliseconds, page/file counts, and total payload size.
             \item[] Driven via a \texttt{manifest.ini} configuration file supporting YAML front-matter parsing, Markdown conversion via \texttt{Text::Markdown}, content collections, and customizable exclusion rules.
